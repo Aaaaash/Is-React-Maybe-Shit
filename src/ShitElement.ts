@@ -1,3 +1,4 @@
+// vNode
 class ShitElement {
   type: string | Function;
   key: any;

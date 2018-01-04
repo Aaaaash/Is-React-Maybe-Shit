@@ -12,59 +12,43 @@ const child = Shit.createElement(
   },
 );
 
-const element = Shit.createElement(
-  'div',
-  {
-    content: 'this is div child',
-    style: {
-      width: '500px',
-      height: '400px',
-      backgroundColor: '#000',
-      fontSize: '40px',
-      color: '#fff',
-    },
-  },
-);
-
-class App extends Component {
+class Demo extends Component {
+  state: any;
   props: any;
-
   constructor(props: any) {
     super(props);
     this.state = {
-      age: 20,
+      text: 'demo',
     }
   }
 
-  handleClick = () => {
-    const { age } = this.state;
-    this.setState({
-      age: age + 1,
-    });
-  }
-
   render() {
-    const { name } = this.props;
-    const { age } = this.state;
+    const { text } = this.state;
+    const { value } = this.props;
     return Shit.createElement(
       'div',
       {
-        content: `I am ${name}, ${age} year old`,
-        onClick: this.handleClick,
-        children: [
-          element,
-          child
-        ]
+        content: `i am ${text}, ${value}`,
       }
     );
   }
 }
 
-const AppContainer = Shit.createElement(
-  App,
+
+const element = Shit.createElement(
+  'div',
   {
-    name: 'sakura',
-  }
+    content: 'this is div child',
+    style: {
+      backgroundColor: '#000',
+      fontSize: '40px',
+      color: '#fff',
+    },
+    children: [
+      Shit.createElement(Demo, { value: 10 }),
+      'shit'
+    ]
+  },
 );
 
-Shit.render(AppContainer, (wrapper as HTMLElement));
+Shit.render(element, (wrapper as HTMLElement));
