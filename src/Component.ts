@@ -1,13 +1,16 @@
+import CompositeComponent from "./CompositeComponent";
+
 class Component {
   props: any;
+  state: any;
+  _shitCompositeInstance: CompositeComponent;
 
   constructor(props?: any) {
     this.props = props;
   }
   render() {}
   setState(newState: any) {
-    console.log(newState);
-    // todo: 实现setState方法
+    this._shitCompositeInstance.updateComponent(null, newState);
   }
 }
 

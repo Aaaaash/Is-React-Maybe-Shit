@@ -1,8 +1,11 @@
 class TextComponent {
   currentElement: string;
   _nodeID: number;
-  constructor(text: string) {
+  _rootWrapper: HTMLElement;
+
+  constructor(text: string, wrapper: HTMLElement) {
     this.currentElement = text;
+    this._rootWrapper = wrapper;
   }
 
   mount(id: number) {

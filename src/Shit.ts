@@ -8,12 +8,13 @@ interface Config {
 
 class Shit {
   rootID: number = 0;
-
+  _rootWrapper: HTMLElement;
   constructor() {}
 
   render(node: any, wrapper: HTMLElement) {
-    const instance = initialComponent(node);
+    const instance = initialComponent(node, wrapper);
     const elementTree = (instance as ShitComponent).mount(this.rootID++);
+    this._rootWrapper = wrapper;
     wrapper.appendChild(elementTree);
   }
 
