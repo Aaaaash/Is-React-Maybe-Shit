@@ -1,14 +1,14 @@
 import initialComponent from './initialComponent';
 import { ShitComponent } from './types';
 
-interface HTMLNodeProps {
+interface NodeProps {
   children?: object[];
   [propName: string]: any;
 }
 
 interface CurrentElement {
   type: string;
-  props: HTMLNodeProps;
+  props: NodeProps;
   [propName: string]: any;
 }
 

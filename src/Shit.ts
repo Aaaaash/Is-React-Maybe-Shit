@@ -17,7 +17,7 @@ class Shit {
     wrapper.appendChild(elementTree);
   }
 
-  createElement(type: string, config: Config) {
+  createElement(type: string | Function, config: Config) {
     const props = {};
     const key = config.key || null;
 
